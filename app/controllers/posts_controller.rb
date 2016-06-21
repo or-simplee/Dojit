@@ -1,4 +1,10 @@
 class PostsController < ApplicationController
+
+  before_action :flash_for
+
+  def flash_for
+      flash[:notice] = "Post Action"
+  end
   def index
     @posts = Post.all
   end

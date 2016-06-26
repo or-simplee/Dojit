@@ -29,6 +29,12 @@ gem 'figaro'
 gem 'pundit'
 # Use for markdown posts
 gem 'redcarpet'
+# Use for upload images
+gem 'carrierwave'
+# Use for manipulate images
+gem 'mini_magick'
+# for save images on S3 storage
+gem 'fog'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

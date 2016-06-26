@@ -24,6 +24,9 @@
         </div>
       </div>
     <% end %>
+      <%= paginate @posts %>
+      <%= page_entries_info @posts %>
+  </div>
   </div>
   <div class="col-md-4">
     <% if policy(Post.new).create? %>

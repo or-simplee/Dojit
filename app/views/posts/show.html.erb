@@ -11,15 +11,8 @@
     <huge>
       <%= image_tag(@post.image.tiny.url) if @post.image? %>
     </huge>
-    <% if current_user %>
-      <% @comments.each do |comment| %>
-
-            <p><%= comment.user.name%>: <%= comment.body %></p> 
-
-      <% end %>
-
-    <%= render partial: '/comments/form', locals: { topic: @topic, post: @post, comment: @post.comments.first } %>
-    <% end %>
+    <%= render partial: '/comments/comment', locals: { post: @post } %>
+    <%= render partial: '/comments/form', locals: { post: @post } %>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>

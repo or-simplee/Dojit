@@ -5,7 +5,6 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   mount_uploader :image, ImageUploader
 
-  after_create :create_vote
   def up_votes
     votes.where(value: 1).count
   end
@@ -28,10 +27,8 @@ class Post < ActiveRecord::Base
 
   validates :title, length: {minimum: 5, message:"has to be at least 5 characters"}
   validates :body, length: {minimum: 20,message:"has to be at least 20 characters"}
-  #validates :topic, presence: true
-  #validates :user, presence: true
-
-  private
+  validates :topic, presence: true
+  validates :user, presence: true
 
   def create_vote
     user.votes.create(post: self, value: 1)

@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   mount_uploader :image, ImageUploader
 
+  scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
+
   def up_votes
     votes.where(value: 1).count
   end

@@ -11,7 +11,7 @@
     <huge>
       <%= image_tag(@post.image.tiny.url) if @post.image? %>
     </huge>
-    <%= render partial: '/comments/comment', locals: { post: @post } %>
+    <%= render @post.comments %>
     <%= render partial: '/comments/form', locals: { post: @post } %>
   </div>
   <div class="col-md-4">

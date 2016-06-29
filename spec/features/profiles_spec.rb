@@ -24,4 +24,19 @@ describe "Visiting profiles" do
     end
 
   end
+
+  describe "signed in" do
+
+    it "shows profile" do
+      #user = FactoryGirl.create(:user)
+      login_as(@user, :scope => :user, :run_callbacks => false)
+      visit user_path(@user)
+      #require 'byebug'; byebug
+      expect(current_path).to eq(user_path(@user))
+      expect( page ).to have_content(@user.name)
+      expect( page ).to have_content(@post.title)
+      expect( page ).to have_content(@comment.body)
+      logout(:user)
+    end
+  end
 end

@@ -32,7 +32,7 @@ describe Post do
 
   describe '#create_vote' do
     it "generates an up-vote when explicitly called" do
-      @user2 = create(:user)
+      binding.pry; @user2 = create(:user)
       post = create(:post, user: @user2)
       expect( post.up_votes ).to eq(0)
       post.create_vote

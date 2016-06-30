@@ -18,9 +18,9 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.top_rated.paginate(page: params[:page], per_page: 10)
+    @users = User.top_rated.page(params[:page]).per(10)
   end
-  
+
   private
 
   def user_params

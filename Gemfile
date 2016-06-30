@@ -45,8 +45,8 @@ gem 'mini_magick'
 # for save images on S3 storage
 gem 'fog'
 # pagine pages
-#gem 'kaminari', '~> 0.16.1'
-gem 'will_paginate'
+gem 'kaminari', '~> 0.16.1'
+#gem 'will_paginate'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

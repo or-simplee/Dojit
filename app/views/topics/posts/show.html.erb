@@ -8,9 +8,9 @@
       <% @post.user.name %>
     </small>
     <p><%= markdown @post.body %></p>
-    <huge>
-      <%= image_tag(@post.image.tiny.url) if @post.image? %>
-    </huge>
+    <h4>
+      <%= image_tag(@post.image.huge.url) if @post.image? %>
+    </h4>
     <h2>Comments</h2>
       <div class='js-comments'>
         <%= render partial: 'comments/comment', collection: @comments %>

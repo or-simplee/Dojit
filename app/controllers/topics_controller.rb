@@ -12,7 +12,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     authorize @topic
-    @posts = @topic.posts.includes(:user).includes(:comments).page(params[:page]).per(10)
+    @posts = @topic.posts.includes(:user).includes(:comments).page(params[:page]).per(5)
   end
 
   def edit

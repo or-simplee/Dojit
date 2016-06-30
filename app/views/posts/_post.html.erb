@@ -4,9 +4,9 @@
     <h4 class="media-heading">
       <%= link_to ( markdown post.title), [post.topic,post] %>
     </h4>
-    <thumb>
-      <%= image_tag(post.image.tiny.url) if post.image? %>
-    </thumb>
+    <h5>
+      <%= image_tag(post.image.huge.url) if post.image? %>
+    </h5>
     <small>
       <%= image_tag (post.user.avatar.tiny.url) if post.user.avatar? %>
       submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>

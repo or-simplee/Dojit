@@ -11,8 +11,14 @@
     <huge>
       <%= image_tag(@post.image.tiny.url) if @post.image? %>
     </huge>
-    <%= render partial: 'comments/comment', collection: @comments %>
-    <%= render partial: '/comments/form', locals: { post: @post } %>
+    <h2>Comments</h2>
+      <div class='js-comments'>
+        <%= render partial: 'comments/comment', collection: @comments %>
+      </div>
+
+      <div class='new-comment'>
+        <%= render partial: '/comments/form' %>
+      </div>    
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
